@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Socket.IO chat example</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="chatwnd">
+      <div class="chatwnd__wrapper">
+        <div class="statusbar">
+          <span class="statusbar__usercount-text">User count:</span>
+          <span class="statusbar__usercount-value">0</span>
+        </div>
+        <div class="chatwnd__messages">
+        </div>
+        <div class="chatwnd__ctrlwrapper">
+          <input class="chatwnd__input" type="text">
+          <button class="chatwnd__sendbtn">Send message</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+  </body>
+</html>
