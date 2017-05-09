@@ -1,0 +1,32 @@
+Найти:
+<input ng-model="myQuery"><br><br>
+Фильтровать по типу:
+<select ng-model="myQueryType" ng-options="pokemon.type[0] as pokemon.type[0] for pokemon in pokemons"></select><br><br>
+
+Сортировать по:
+<select ng-model="myOrderProperty">
+    <option value="id">ID</option>
+    <option value="weight">Весу</option>
+    <option value="-weight">Весу в порядке убывания</option>
+    <option value="height">Росту</option>
+    <option value="name">Имени</option>
+</select>
+
+<ul>
+    <li ng-repeat="pokemon in pokemons | filter: myQuery | typefilter:myQueryType | orderBy: myOrderProperty">
+        <img src="{{pokemon.ThumbnailImage}}" ng-click="alert(pokemon.name)">
+
+        <small>ID #{{pokemon.id }}</small>
+        <h1 ng-class="{red: pokemon.type[0] == 'fire',
+                        blue: pokemon.type[0] == 'water',
+                        green: pokemon.type[0] == 'grass'}">{{pokemon.name}}</h1>
+        <p>Вес: {{pokemon.weight}}, рост: {{pokemon.height}}</p>
+        <p>Тип: {{pokemon.type [0]}}</p>
+        <hr />
+    </li>
+</ul>
+
+<p ng-show="myQuery">
+    Выведены покемоны, содержащие
+    {{myQuery}}
+</p>
