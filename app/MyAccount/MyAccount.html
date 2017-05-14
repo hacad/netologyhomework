@@ -1,0 +1,49 @@
+<form name="vm.myAccountForm" novalidate>
+  <div class="form-group">
+    <label>Имя</label>
+    <input class="form-control"
+        data-ng-model="vm.myAccount.name"
+        type="text"
+        placeholder="Имя"
+        required
+        ng-minlength="2"
+        name="name">
+  </div>
+  <div ng-messages="vm.myAccountForm.name.$error" ng-if="vm.myAccountForm.name.$dirty">
+    <div ng-message="required" class="alert alert-danger" role="alert">Обязательное поле</div>
+    <div ng-message="minlength" class="alert alert-danger" role="alert">Минимальная длина 2 символа</div>
+  </div>
+  <div class="form-group">
+    <label>Электронная почта</label>
+    <input class="form-control"
+        data-ng-model="vm.myAccount.email"
+        type="email"
+        placeholder="Электронная почта" 
+        required
+        ng-minlength="5"
+        name="email">
+  </div>
+  <div ng-messages="vm.myAccountForm.email.$error" ng-if="vm.myAccountForm.email.$dirty">
+    <div ng-message="required" class="alert alert-danger" role="alert">Обязательное поле</div>
+    <div ng-message="minlength" class="alert alert-danger" role="alert">Минимальная длина 5 символа</div>
+  </div>
+  <div class="form-group">
+    <label>Телефон</label>
+    <input class="form-control"
+        data-ng-model="vm.myAccount.tel"
+        type="tel"
+        placeholder="Телефон в формате: + 7 123 4567890"
+        required
+        ng-minlength="12"
+        ng-maxlength="12"
+        name="tel"
+        ng-pattern="/\+7\d{10}/">
+  </div>
+  <div ng-messages="vm.myAccountForm.tel.$error" ng-if="vm.myAccountForm.tel.$dirty">
+    <div ng-message="required" class="alert alert-danger" role="alert">Обязательное поле</div>
+    <div ng-message="minlength" class="alert alert-danger" role="alert">Минимальная длина 12 символов</div>
+    <div ng-message="maxlength" class="alert alert-danger" role="alert">Максимальная длина 12 символов</div>
+    <div ng-message="pattern" class="alert alert-danger" role="alert">Необходимо ввести значение в формате: +71234567890</div>
+  </div>
+  <button type="submit" class="btn btn-default" data-ng-click="vm.addAccountInfo(vm.myAccount)" data-ng-disabled="vm.isSaveBtnDisabled()">Сохранить</button>
+</form>
