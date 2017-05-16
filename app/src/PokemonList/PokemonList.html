@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-8">
+
+        <div ng-if="!pokemonsLoaded && !pokemonsLoadError">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Loading pokemons...
+        </div>
+
+        <div class="alert alert-danger" ng-if="pokemonsLoadError">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            Error occured while loading pokemons
+        </div>
+
+        <div class="list-group" ng-if="pokemonsLoaded">
+            <a href="#!/pokemons/{{singlePokemon.objectId }}" class="list-group-item" ng-repeat="singlePokemon in pokemons">
+
+                <h4>
+                    {{singlePokemon.name | uppercase }}
+                </h4>
+
+            </a>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        
+        <div ng-if="!berriesLoaded && !berriesLoadError">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Loading berries...
+        </div>
+        
+        <div class="alert alert-danger" ng-if="berriesLoadError">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            Error occured while loading berries
+        </div>
+
+        <div class="list-group" ng-if="berriesLoaded">
+            <div class="list-group-item" ng-repeat="singleBerry in berries">
+
+                <h4>
+                    {{singleBerry.name | uppercase }}
+                </h4>
+
+            </a>
+        </div>
+
+    </div>
+</div>
