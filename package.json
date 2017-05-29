@@ -1,0 +1,27 @@
+{
+  "name": "netologyhomework",
+  "version": "1.0.0",
+  "description": "netology homework",
+  "main": "module5-task1.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hacad/netologyhomework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hacad/netologyhomework/issues"
+  },
+  "homepage": "https://github.com/hacad/netologyhomework#readme",
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "chai": "^4.0.0",
+    "express": "^4.15.3",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
+  }
+}
