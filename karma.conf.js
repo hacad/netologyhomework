@@ -8,13 +8,19 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/angular-messages/angular-messages.js',
+      './app.js',
+      './PokemonsService/PokemonsService.js',
+      './ShoppingCartStore/ShoppingCartStore.js',
+      './PokemonList/PokemonListCtrl.js',
       'components/**/*.js',
-      'view*/**/*.js'
+      '../unit-tests/*.js'    
     ],
 
     autoWatch: true,
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'sinon'],
 
     browsers: ['Chrome'],
 
@@ -22,7 +28,8 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine',
-      'karma-junit-reporter'
+      'karma-junit-reporter',
+      'karma-sinon'
     ],
 
     junitReporter: {

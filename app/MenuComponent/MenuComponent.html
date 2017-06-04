@@ -6,15 +6,18 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="btn-group" role="group">
-        <a class="btn btn-default"
+        <a id="btnList" 
+          class="btn btn-default"
           data-ui-sref="list"
           ng-click="$ctrl.setActive('list')"
           ng-class="{current: $ctrl.isActive('list')}">Список</a>
-        <a class="btn btn-default"
+        <a id="btnCreateNew" 
+          class="btn btn-default"
           data-ui-sref="createNewPokemon"
           ng-click="$ctrl.setActive('createnew')"
           ng-class="{current: $ctrl.isActive('createnew')}">Добавить нового</a>
-        <a class="btn btn-default"
+        <a id="btnMyAccount"
+          class="btn btn-default"
           data-ui-sref="myaccount"
           ng-click="$ctrl.setActive('myaccount')"
           ng-class="{current: $ctrl.isActive('myaccount')}">Мой аккаунт</a>
